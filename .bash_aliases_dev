@@ -1,0 +1,7 @@
+# Checks maven build with line rate and branch rate
+function chkmvnbuild {
+	mvn clean checkstyle:check -Djacoco.threshold.totalLineRate=$1 -Djacoco.threshold.totalBranchRate=$2 pmd:check pmd:cpd-check package
+}
+
+#Maven aliases
+alias mci='mvn clean install'
